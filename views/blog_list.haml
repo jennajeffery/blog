@@ -1,0 +1,19 @@
+%strong{:class => "code", :id => "message"} The Blog Posts
+
+%form{:action => "new_blog_entry", :method => "get"}
+  %br
+    %div{id: "new_blog_button"}
+      %input{:type => "submit", :id => "new_blog", :value => "New Blog"}
+
+
+- posts[0,10].each_with_index do |n, i|
+  %div{id: "post-#{i}", class: "post"}
+    %p= n.author
+    %p= n.title
+    %p= n.textarea
+
+    %form{:action => "read_blog", :method => "get"}
+      %div{id: "read_blog_button-#{i}"}
+        %input{:type => "submit", :id => "read_blog", :value => "Read Full Blog"}
+        %input{:type => "hidden", :name => "i", :value => "i"}
+  %hr

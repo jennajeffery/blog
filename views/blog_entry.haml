@@ -1,0 +1,17 @@
+%strong{:class => "code", :id => "message"} New Blog Post
+
+%form{:action => "save_blog", :method => "post"}
+  %br
+    Author:
+    %input{:type => "text", :name => "author"}
+  %br
+    Title:
+    %input{:type => "text", :name => "title"}
+  %br
+    Content:
+    %input{:type => "textarea", :name=> "textarea"}
+  %br
+    Full Blog Post:
+    %input{:type => "fulltext", :name=> "fulltext"}
+  %br
+    %input{:type => "submit", :id => "submit", :value => "Save"}
